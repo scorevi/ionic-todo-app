@@ -4,13 +4,16 @@ A complete hybrid mobile application built with **Ionic React** demonstrating fu
 
 ## 📱 App Overview
 
-This is a Todo List application that allows users to:
-- ✅ **Create** new todos with title and description
-- 📖 **Read** all active and completed todos
-- ✏️ **Update** todo details and completion status
+This is a modern Todo List application that allows users to:
+- ✅ **Create** new todos with title, description, priority, category, and due date
+- 🎯 **Priority Levels** - Assign Low, Medium, or High priority to tasks
+- 📁 **Categories** - Organize tasks by category (Work, Personal, Shopping, etc.)
+- 📅 **Due Dates** - Set due dates and track overdue tasks with visual indicators
+- 📖 **Read** all active and completed todos with rich metadata
+- ✏️ **Update** todo details, priority, category, and completion status
 - 🗑️ **Delete** todos permanently
 
-The app features a clean, responsive UI with tab-based navigation and real-time Firebase database synchronization.
+The app features a clean, responsive UI with tab-based navigation, color-coded priority badges, and real-time Firebase database synchronization.
 
 ---
 

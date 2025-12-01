@@ -16,12 +16,21 @@ import { Todo } from '../types/Todo';
 const COLLECTION_NAME = 'todos';
 
 // CREATE - Add a new todo
-export const createTodo = async (title: string, description: string): Promise<string> => {
+export const createTodo = async (
+  title: string,
+  description: string,
+  priority: 'low' | 'medium' | 'high' = 'medium',
+  dueDate?: Date,
+  category: string = 'General'
+): Promise<string> => {
   try {
     const docRef = await addDoc(collection(db, COLLECTION_NAME), {
       title,
       description,
       completed: false,
+      priority,
+      dueDate: dueDate ? Timestamp.fromDate(dueDate) : null,
+      category,
       createdAt: Timestamp.now(),
       updatedAt: Timestamp.now()
     });
@@ -50,7 +59,10 @@ export const getAllTodos = async (): Promise<Todo[]> => {
       id: doc.id,
       ...doc.data(),
       createdAt: doc.data().createdAt?.toDate() || new Date(),
-      updatedAt: doc.data().updatedAt?.toDate() || new Date()
+      updatedAt: doc.data().updatedAt?.toDate() || new Date(),
+      dueDate: doc.data().dueDate?.toDate(),
+      priority: doc.data().priority || 'medium',
+      category: doc.data().category || 'General'
     })) as Todo[];
   } catch (error: any) {
     console.error('Error getting todos:', error);
@@ -85,7 +97,10 @@ export const getCompletedTodos = async (): Promise<Todo[]> => {
       id: doc.id,
       ...doc.data(),
       createdAt: doc.data().createdAt?.toDate() || new Date(),
-      updatedAt: doc.data().updatedAt?.toDate() || new Date()
+      updatedAt: doc.data().updatedAt?.toDate() || new Date(),
+      dueDate: doc.data().dueDate?.toDate(),
+      priority: doc.data().priority || 'medium',
+      category: doc.data().category || 'General'
     })) as Todo[];
   } catch (error: any) {
     console.error('Error getting completed todos:', error);
@@ -101,10 +116,19 @@ export const updateTodo = async (
 ): Promise<void> => {
   try {
     const todoRef = doc(db, COLLECTION_NAME, id);
-    await updateDoc(todoRef, {
+    const updateData: any = {
       ...updates,
       updatedAt: Timestamp.now()
-    });
+    };
+
+    // Convert Date to Timestamp for dueDate if it exists
+    if (updates.dueDate) {
+      updateData.dueDate = Timestamp.fromDate(updates.dueDate);
+    } else if (updates.dueDate === undefined && 'dueDate' in updates) {
+      updateData.dueDate = null;
+    }
+
+    await updateDoc(todoRef, updateData);
   } catch (error) {
     console.error('Error updating todo:', error);
     throw error;

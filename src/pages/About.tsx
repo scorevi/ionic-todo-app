@@ -53,20 +53,34 @@ const About: React.FC = () => {
                 <IonIcon icon={checkmarkCircle} slot="start" color="success" />
                 <IonLabel>
                   <h3>Create Todos</h3>
-                  <p>Add new tasks with title and description</p>
+                  <p>Add tasks with title, description, priority, category, and due date</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
                 <IonIcon icon={checkmarkCircle} slot="start" color="success" />
                 <IonLabel>
-                  <h3>Read Todos</h3>
-                  <p>View all active and completed tasks</p>
+                  <h3>Priority Levels</h3>
+                  <p>Assign Low, Medium, or High priority to tasks</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
                 <IonIcon icon={checkmarkCircle} slot="start" color="success" />
                 <IonLabel>
-                  <h3>Update Todos</h3>
+                  <h3>Categories</h3>
+                  <p>Organize tasks by category (Work, Personal, Shopping, etc.)</p>
+                </IonLabel>
+              </IonItem>
+              <IonItem>
+                <IonIcon icon={checkmarkCircle} slot="start" color="success" />
+                <IonLabel>
+                  <h3>Due Dates</h3>
+                  <p>Set due dates and track overdue tasks</p>
+                </IonLabel>
+              </IonItem>
+              <IonItem>
+                <IonIcon icon={checkmarkCircle} slot="start" color="success" />
+                <IonLabel>
+                  <h3>Update & Complete</h3>
                   <p>Edit task details and mark as complete</p>
                 </IonLabel>
               </IonItem>

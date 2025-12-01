@@ -10,7 +10,9 @@ import {
   IonLabel,
   IonInput,
   IonTextarea,
-  IonButtons
+  IonButtons,
+  IonSelect,
+  IonSelectOption
 } from '@ionic/react';
 import { createTodo } from '../services/todoService';
 
@@ -23,6 +25,9 @@ interface AddTodoModalProps {
 const AddTodoModal: React.FC<AddTodoModalProps> = ({ isOpen, onClose, onSuccess }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [priority, setPriority] = useState<'low' | 'medium' | 'high'>('medium');
+  const [category, setCategory] = useState('General');
+  const [dueDate, setDueDate] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
@@ -32,9 +37,13 @@ const AddTodoModal: React.FC<AddTodoModalProps> = ({ isOpen, onClose, onSuccess 
 
     setLoading(true);
     try {
-      await createTodo(title.trim(), description.trim());
+      const dueDateObj = dueDate ? new Date(dueDate) : undefined;
+      await createTodo(title.trim(), description.trim(), priority, dueDateObj, category.trim());
       setTitle('');
       setDescription('');
+      setPriority('medium');
+      setCategory('General');
+      setDueDate('');
       onSuccess();
     } catch (error) {
       console.error('Error creating todo:', error);
@@ -47,6 +56,9 @@ const AddTodoModal: React.FC<AddTodoModalProps> = ({ isOpen, onClose, onSuccess 
   const handleCancel = () => {
     setTitle('');
     setDescription('');
+    setPriority('medium');
+    setCategory('General');
+    setDueDate('');
     onClose();
   };
 
@@ -60,7 +72,7 @@ const AddTodoModal: React.FC<AddTodoModalProps> = ({ isOpen, onClose, onSuccess 
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent className="ion-padding">
         <IonItem>
           <IonLabel position="stacked">Title *</IonLabel>
           <IonInput
@@ -76,7 +88,46 @@ const AddTodoModal: React.FC<AddTodoModalProps> = ({ isOpen, onClose, onSuccess 
             value={description}
             onIonInput={(e) => setDescription(e.detail.value!)}
             placeholder="Enter todo description"
-            rows={4}
+            rows={3}
+          />
+        </IonItem>
+        <IonItem>
+          <IonLabel position="stacked">Priority</IonLabel>
+          <IonSelect
+            value={priority}
+            onIonChange={(e) => setPriority(e.detail.value)}
+            interface="popover"
+          >
+            <IonSelectOption value="low">Low</IonSelectOption>
+            <IonSelectOption value="medium">Medium</IonSelectOption>
+            <IonSelectOption value="high">High</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+        <IonItem>
+          <IonLabel position="stacked">Category</IonLabel>
+          <IonSelect
+            value={category}
+            onIonChange={(e) => setCategory(e.detail.value)}
+            interface="popover"
+          >
+            <IonSelectOption value="General">General</IonSelectOption>
+            <IonSelectOption value="Work">Work</IonSelectOption>
+            <IonSelectOption value="Personal">Personal</IonSelectOption>
+            <IonSelectOption value="Shopping">Shopping</IonSelectOption>
+            <IonSelectOption value="Health">Health</IonSelectOption>
+            <IonSelectOption value="Finance">Finance</IonSelectOption>
+            <IonSelectOption value="Education">Education</IonSelectOption>
+            <IonSelectOption value="Home">Home</IonSelectOption>
+            <IonSelectOption value="Travel">Travel</IonSelectOption>
+            <IonSelectOption value="Family">Family</IonSelectOption>
+          </IonSelect>
+        </IonItem>
+        <IonItem>
+          <IonLabel position="stacked">Due Date (Optional)</IonLabel>
+          <IonInput
+            type="date"
+            value={dueDate}
+            onIonInput={(e) => setDueDate(e.detail.value!)}
           />
         </IonItem>
         <div style={{ padding: '1rem' }}>

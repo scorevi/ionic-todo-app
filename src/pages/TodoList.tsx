@@ -147,6 +147,12 @@ const TodoList: React.FC = () => {
           message={toast.message}
           duration={2000}
           color={toast.color}
+          buttons={[
+            {
+              text: 'OK',
+              role: 'cancel'
+            }
+          ]}
           onDidDismiss={() => setToast({ ...toast, show: false })}
         />
       </IonContent>
