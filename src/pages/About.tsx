@@ -38,7 +38,7 @@ const About: React.FC = () => {
           <IonCardContent>
             <p>
               A hybrid mobile application built with Ionic React, demonstrating full CRUD operations
-              with Firebase Firestore integration.
+              with Firebase Firestore integration. MADE BY Sean Patrick Caintic, a 4th year CS Student from CIIT. ORIGINAL WORK.
             </p>
           </IonCardContent>
         </IonCard>
@@ -144,7 +144,7 @@ const About: React.FC = () => {
         </IonCard>
 
         <div style={{ textAlign: 'center', padding: '1rem', color: 'var(--ion-color-medium)' }}>
-          <p>Hybrid Programming Exam - December 2025</p>
+          <p>Hybrid Programming Final Exam - December 2025</p>
         </div>
       </IonContent>
     </IonPage>
