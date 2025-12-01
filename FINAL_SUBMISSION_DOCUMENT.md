@@ -866,113 +866,41 @@ Implemented predefined category list with `IonSelect`:
 
 ### Technical Skills
 
-**1. Ionic Framework Mastery**
-- Component library usage (IonPage, IonContent, IonModal, IonSelect, etc.)
-- Navigation with tab-based routing
-- Modal management and lifecycle
-- Toast notifications and user feedback
-- Gesture handling (swipe-to-delete)
-- Responsive design principles
+Throughout this project, I gained extensive hands-on experience with the Ionic Framework, mastering its comprehensive component library including IonPage, IonContent, IonModal, and IonSelect. I learned to implement tab-based navigation for seamless user experience, manage modal lifecycles effectively, and create intuitive toast notifications for user feedback. The project also deepened my understanding of gesture handling, particularly the swipe-to-delete functionality, and reinforced responsive design principles for creating applications that work beautifully across different screen sizes.
 
-**2. React & TypeScript**
-- Functional components with hooks
-- State management with useState
-- Side effects with useEffect
-- Event handling
-- TypeScript interfaces and type safety
-- Props drilling and component communication
+Working with React and TypeScript significantly enhanced my frontend development skills. I became proficient in building functional components using hooks, particularly useState for state management and useEffect for handling side effects. Event handling became second nature as I implemented various user interactions throughout the app. TypeScript's type safety proved invaluable, as I learned to create and use interfaces effectively, ensuring type correctness across the entire application. The experience also taught me the importance of proper component communication and how to manage props drilling in a React application.
 
-**3. Firebase Integration**
-- Firestore database setup and configuration
-- CRUD operations with Firebase SDK
-- Query building and filtering
-- Timestamp handling
-- Security rules configuration
-- Real-time data synchronization
+Firebase integration was a cornerstone of this project, where I gained practical experience in setting up and configuring Firestore database, implementing complete CRUD operations using the Firebase SDK, and building complex queries with filtering capabilities. Timestamp handling between Firestore and JavaScript became routine, and I learned to configure security rules properly for production environments. The real-time data synchronization feature of Firestore opened my eyes to the power of modern cloud databases and how they can create responsive, live-updating applications.
 
-**4. Mobile Development**
-- Capacitor native runtime
-- Android platform configuration
-- Gradle build system
-- SDK version management
-- Platform-specific adjustments
-- Emulator testing
+Mobile development with Capacitor introduced me to the world of hybrid app development. I learned to work with Capacitor's native runtime, configure Android platform settings, and navigate the Gradle build system. Managing SDK versions and making platform-specific adjustments became essential skills, and testing applications in Android emulators taught me the importance of testing across different devices and screen sizes.
 
-**5. Build Tools & DevOps**
-- Vite build configuration
-- Environment management
-- Git version control
-- Deployment workflows
-- Debugging techniques
-- Performance optimization
+Build tools and DevOps practices rounded out my technical skill set. I became comfortable with Vite's fast build configuration, learned environment management best practices, and gained proficiency in Git version control. Understanding deployment workflows, implementing effective debugging techniques, and optimizing application performance completed my full-stack development education.
 
 ---
 
 ### Conceptual Understanding
 
-**1. Hybrid Mobile App Architecture**
-- Single codebase for multiple platforms
-- Web technologies for mobile development
-- Native API access through Capacitor
-- Progressive Web App capabilities
-- Platform-specific vs. shared code
+This project deepened my understanding of hybrid mobile app architecture, where a single codebase can target multiple platforms effectively. I learned how web technologies can be leveraged for mobile development while still accessing native APIs through Capacitor. The progressive web app capabilities fascinated me, as did understanding when to use platform-specific code versus shared code for optimal performance and user experience.
 
-**2. Backend-as-a-Service (BaaS)**
-- Serverless architecture benefits
-- Cloud database advantages
-- Authentication and security
-- Scalability considerations
-- Cost optimization
+Backend-as-a-Service (BaaS) architecture revealed the benefits of serverless computing. I discovered how cloud databases like Firestore provide scalability, real-time synchronization, and reduced infrastructure management. The project taught me important lessons about authentication, security considerations, and cost optimization strategies when using cloud services.
 
-**3. CRUD Pattern Implementation**
-- Separation of concerns
-- Service layer architecture
-- Error handling strategies
-- User feedback loops
-- Data validation
+The CRUD pattern implementation reinforced software engineering best practices. I learned the importance of separation of concerns, implementing a proper service layer architecture that keeps business logic separate from UI components. Error handling strategies became crucial for creating robust applications, and I understood how user feedback loops and data validation contribute to a better user experience.
 
-**4. UI/UX Design Principles**
-- Mobile-first design
-- Touch target sizing
-- Visual hierarchy
-- Color psychology (priority badges)
-- User feedback mechanisms
-- Loading states and empty states
+UI/UX design principles took on new meaning as I implemented mobile-first design patterns. I learned about appropriate touch target sizing for mobile devices, creating visual hierarchy through layout and typography, and using color psychology effectively with the priority badge system. User feedback mechanisms, loading states, and empty states all proved essential for creating professional, polished applications.
 
-**5. State Management**
-- Component state vs. global state
-- Data flow in React
-- Async operations handling
-- UI synchronization with database
+State management concepts became clearer as I worked with component state versus considering global state needs. Understanding data flow in React, handling asynchronous operations properly, and keeping UI synchronized with the database taught me valuable lessons about application architecture and data consistency.
 
 ---
 
 ### Project Management Skills
 
-**1. Requirement Analysis**
-- Understanding exam requirements
-- Feature prioritization
-- Scope management
-- Time estimation
+The project significantly developed my requirement analysis capabilities. I learned to carefully read and understand exam requirements, prioritize features based on importance and complexity, manage scope to avoid feature creep, and estimate time more accurately for different development tasks.
 
-**2. Problem-Solving**
-- Debugging systematic approach
-- Error research and documentation
-- Solution validation
-- Fallback strategy implementation
+Problem-solving became systematic through this experience. I developed a methodical debugging approach, learned the importance of researching and documenting errors for future reference, understood how to validate solutions before implementing them fully, and discovered the value of fallback strategies when primary approaches fail.
 
-**3. Documentation**
-- Code comments
-- README files
-- API documentation
-- User guides
-- Troubleshooting guides
+Documentation emerged as a critical skill throughout the project. I learned to write meaningful code comments that explain the "why" not just the "what," create comprehensive README files for project setup, document APIs clearly for maintainability, write user guides that non-technical users can follow, and develop troubleshooting guides to help others overcome common issues.
 
-**4. Version Control**
-- Git workflow
-- Commit messages
-- Branch management
-- Repository organization
+Version control practices became second nature as I worked with Git. I learned proper Git workflow including branching strategies, writing clear and descriptive commit messages that tell the story of changes, managing branches effectively for feature development, and organizing repositories in a logical, maintainable structure.
 
 ---
 
